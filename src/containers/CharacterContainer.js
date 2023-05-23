@@ -6,8 +6,10 @@ import { useState, useEffect } from "react";
 const CharacterContainer = () => {
 
     const [characters, setCharacters] = useState([])
+    const [error, setError] = useState("");
 
 
+    // Fetching API
     const fetchCharacters = async () => {
         const response = await fetch ("https://hp-api.onrender.com/api/characters/students")
         const jsonData = await response.json();
@@ -16,12 +18,18 @@ const CharacterContainer = () => {
     }
 
     useEffect(() => {
-        fetchCharacters();
-    }, [])
+        fetch(`https://hp-api.onrender.com/api/characters/students`)
+          .then((response) => response.json())
+          .then((response) => setCharacters(response))
+          .catch((err) => setError(err.message));
+    
+        }, [])
+    
     
     return(
     <>
         <h1>Hello from Character Container!</h1>
+        {/* PROPS */}
         <CharacterForm/>
         <CharacterList/>
     </>

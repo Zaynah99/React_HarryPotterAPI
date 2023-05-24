@@ -11,19 +11,16 @@ const CharacterContainer = () => {
 
     // Fetching API
     const fetchCharacters = async () => {
-        const response = await fetch ("https://hp-api.onrender.com/api/characters/students")
-        const jsonData = await response.json();
-
-        setCharacters(jsonData);
-    }
-
-    useEffect(() => {
         fetch(`https://hp-api.onrender.com/api/characters/students`)
           .then((response) => response.json())
-          .then((response) => setCharacters(response))
+          .then((jsonData) => setCharacters(jsonData))
           .catch((err) => setError(err.message));
+
+    };
     
-        }, [])
+    useEffect(() => {
+        fetchCharacters();
+          }, []);
     
     
     return(
@@ -31,7 +28,7 @@ const CharacterContainer = () => {
         <h1>Hello from Character Container!</h1>
         {/* PROPS */}
         <CharacterForm/>
-        <CharacterList/>
+        <CharacterList characters={characters}/>{/* passes characters state as prop to characterList */}
     </>
     );
 }

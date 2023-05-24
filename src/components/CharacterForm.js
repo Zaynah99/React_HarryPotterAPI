@@ -1,7 +1,12 @@
-const CharacterForm = () => {
+import { useState } from "react";
+
+
+
+const CharacterForm = ({selectedHouse, setSelectedHouse}) => {
 
     const handleHouseChange = (event) => {
-        
+     const selectedHouse = event.target.value;
+     setSelectedHouse(selectedHouse);
     }
 
 
@@ -24,8 +29,12 @@ const CharacterForm = () => {
         placeholder="Patronus type"
         />
 
-        <select onChange={handleHouseChange} name="house" value="house">
+        <select onChange={handleHouseChange} name="house" value={selectedHouse || ""}>
             <option disabled-value="select-house">Select a house</option>
+            <option value="gryffindor">Gryffindor</option>
+            <option value="hufflepuff">Hufflepuff</option>
+            <option value="ravenclaw">Ravenclaw</option>
+            <option value="slytherin">Slytherin</option>
         </select>
         <button type="submit">Search</button>
         </form>

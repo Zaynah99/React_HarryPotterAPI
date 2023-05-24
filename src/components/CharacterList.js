@@ -9,7 +9,7 @@ const CharacterList = ({ characters }) => {
         key={character.name}
         character={character}
         />
-        <showCharacter/>
+        
         </>
     );
  });

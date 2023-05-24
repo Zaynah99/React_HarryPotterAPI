@@ -7,6 +7,7 @@ const CharacterContainer = () => {
 
     const [characters, setCharacters] = useState([])
     const [error, setError] = useState("");
+    const [selectedHouse, setSelectedHouse] = useState("")
 
 
     // Fetching API
@@ -27,7 +28,7 @@ const CharacterContainer = () => {
     <>
         <h1>Hello from Character Container!</h1>
         {/* PROPS */}
-        <CharacterForm/>
+        <CharacterForm selectedHouse={selectedHouse} setSelectedHouse={setSelectedHouse}/>
         <CharacterList characters={characters}/>{/* passes characters state as prop to characterList */}
     </>
     );

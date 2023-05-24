@@ -9,6 +9,7 @@ const CharacterContainer = () => {
     // const [filteredCharacters, setFilteredCharacters] = useState ([])
     const [error, setError] = useState("");
     const [selectedHouse, setSelectedHouse] = useState("")
+   
 
 
     // Fetching API

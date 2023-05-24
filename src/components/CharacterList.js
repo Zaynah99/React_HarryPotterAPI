@@ -7,7 +7,6 @@ const CharacterList = ({ characters }) => {
         <Character 
         key={character.name}
         character={character}
-        image={character.image} 
         />
     );
  });

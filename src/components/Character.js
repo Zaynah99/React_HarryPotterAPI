@@ -1,11 +1,22 @@
 const  Character= ({character}) => {
+
+    const handleShowClick = () => {
+        
+    };
+
     return (  
-        <>
-        <h3> Name: {character.name}</h3>
-        <p> House: {character.house}</p>
-        <p>Patronus:{character.patronus}</p>
-        <img src = {character.image}/> 
-        </>
+        <div className="characters">
+         <h2>{character.name}</h2>
+         <p> House: {character.house}</p>
+         <p>Patronus: {character.patronus}</p>
+         <img src = {character.image}/> 
+
+         <div className="show-button">
+            <button onClick= {handleShowClick}>Show more!</button>
+         </div>
+
+
+        </div>
     );
 }
  

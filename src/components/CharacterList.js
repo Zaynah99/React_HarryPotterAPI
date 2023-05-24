@@ -4,10 +4,13 @@ import Character from "./Character";
 const CharacterList = ({ characters }) => {
     const characterComponents = characters.map((character) =>{ 
      return (
+        <>
         <Character 
         key={character.name}
         character={character}
         />
+        <showCharacter/>
+        </>
     );
  });
 

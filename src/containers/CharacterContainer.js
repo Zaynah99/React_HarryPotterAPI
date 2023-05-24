@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 const CharacterContainer = () => {
 
     const [characters, setCharacters] = useState([])
+    // const [filteredCharacters, setFilteredCharacters] = useState ([])
     const [error, setError] = useState("");
     const [selectedHouse, setSelectedHouse] = useState("")
 
@@ -22,11 +23,24 @@ const CharacterContainer = () => {
     useEffect(() => {
         fetchCharacters();
           }, []);
+
+
+    // Filter through characters
+    // const filterCharacters = (search) => {
+    //     const {characterName, PatronusType, selectedHouse} = search;
+    //     const filteredResults = characters.filter((character) => {
+    //         const nameMatch = character.name.toLowerCase()
+    //         const patronusMatch = character.patronus.toLowerCase()
+    //         const houseMatch = selectedHouse === "" || character.house === selectedHouse;
+
+    //         return nameMatch && patronus
+    //     })
+
+    // }
     
     
     return(
     <>
-        <h1>Hello from Character Container!</h1>
         {/* PROPS */}
         <CharacterForm selectedHouse={selectedHouse} setSelectedHouse={setSelectedHouse}/>
         <CharacterList characters={characters}/>{/* passes characters state as prop to characterList */}

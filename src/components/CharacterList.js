@@ -16,7 +16,7 @@ const CharacterList = ({ characters }) => {
 
   return (
     <div>
-      <h2>Character List</h2>
+      <h1>Character List</h1>
       {characterComponents}
     </div>
 

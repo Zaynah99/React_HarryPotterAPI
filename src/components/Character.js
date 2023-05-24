@@ -9,7 +9,7 @@ const  Character= ({character}) => {
          <h2>{character.name}</h2>
          <p> House: {character.house}</p>
          <p>Patronus: {character.patronus}</p>
-         <img src = {character.image} alt= "image of character"/> 
+         <img src = {character.image} alt= "image of characters"/> 
 
          <div className="show-button">
             <button onClick= {handleShowClick}>Show more!</button>

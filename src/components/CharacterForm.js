@@ -1,18 +1,27 @@
 import { useState } from "react";
 
-
-
 const CharacterForm = ({selectedHouse, setSelectedHouse}) => {
+
+
 
     const handleHouseChange = (event) => {
      const selectedHouse = event.target.value;
      setSelectedHouse(selectedHouse);
-    }
+    };
+
+    // const handleNameChange = (event) => {
+    //     setCharacterName(event.target.value);
+    // };
+
+    // const handlePatronusChange = (event) => {
+    //     setPatronusType(event.target.value);
+    // };
 
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-    }
+        // onSearch({characterName, patronusType, selectedHouse})
+    };
 
     return ( 
         <form onSubmit={handleFormSubmit}>
@@ -21,12 +30,16 @@ const CharacterForm = ({selectedHouse, setSelectedHouse}) => {
         type="text"
         name="name"
         placeholder="Character name"
+        // value={characterName}
+        // onChange={handleName}
         />
 
         <input
         type="text"
         name="patronus"
         placeholder="Patronus type"
+        // value={patronusType}
+        // onChange={handlePatronusChange}
         />
 
         <select onChange={handleHouseChange} name="house" value={selectedHouse || ""}>
